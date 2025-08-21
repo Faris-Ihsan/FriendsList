@@ -11,8 +11,29 @@ export default function Navigation() {
     return (
         <NavigationContainer>
         <Tab.Navigator>
-            <Tab.Screen name="Home" component={HomeScreen} options={{ title: 'Freunde', tabBarIcon:({ size, color }) => <Icon.Ionicons name='home' size={size} color={color}/> }}/>
-            <Tab.Screen name="Settings" component={SettingsScreen}  options={{ title: 'Einstellungen', tabBarIcon:({ size,color }) => <Icon.Ionicons name='settings' size={size} color={color}/> }}/>
+            <Tab.Screen 
+                name="Home" 
+                component={HomeScreen} 
+                options={{ 
+                    title: 'Freunde', 
+                    tabBarIcon:(objectParams) => {
+                        // const size = objectParams.size;
+                        // const color = objectParams.color;
+                        const {size, color} = objectParams; // Destrukturierung von Size und Color
+                        return (
+                            <Icon.Ionicons name='home' size={size} color={color}/>
+                        );
+                    },
+                }}
+            />
+            <Tab.Screen 
+                name="Settings" 
+                component={SettingsScreen}  
+                options={{ 
+                    title: 'Einstellungen', 
+                    tabBarIcon:({ size,color }) => <Icon.Ionicons name='settings' size={size} color={color}/> 
+                }}
+            />
         </Tab.Navigator>
         </NavigationContainer>
     );
