@@ -1,24 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import HomeScreen from './screens/HomeScreen';
+import SettingsScreen from './screens/SettingsScreen';
 
 const Tab = createBottomTabNavigator();
-
-function HomeScreen() {
-  return(
-    <View style={styles.container}>
-      <Text>Freunde</Text>
-    </View>
-  );
-}
-
-function SettingsScreen() {
-  return(
-    <View style={styles.container}>
-      <Text>Einstellungen</Text>
-    </View>
-  );
-}
 
 export default function App() {
   return (
