@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function SettingsScreen() {
     return(
         <View style={styles.container}>
-        <Text>Freunde</Text>
+        <Text>Einstellungen</Text>
         </View>
     );
 }
