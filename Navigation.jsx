@@ -12,10 +12,10 @@ const Tab = createBottomTabNavigator();
 
 function HomeStack() {
     return (
-            <Stack.Navigator>
-                <Stack.Screen name="HomeScreen" component={HomeScreen}/>
-                <Stack.Screen name="Friend" component={FriendScreen}/>
-            </Stack.Navigator>
+        <Stack.Navigator>
+            <Stack.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false }}/>
+            <Stack.Screen name="Friend" component={FriendScreen}/>
+        </Stack.Navigator>
     )
 }
 
@@ -38,6 +38,7 @@ export default function Navigation() {
                     },
                     tabBarActiveTintColor: 'orange',
                     tabBarStyle: {backgroundColor: 'aliceblue'}, 
+                    headerShown: false,
                 };
             }}
         >
