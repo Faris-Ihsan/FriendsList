@@ -1,10 +1,10 @@
 import { Button, StyleSheet, Text, View } from 'react-native';
 
-export default function HomeScreen({navigation}) {
+export default function FriendScreen() {
     return(
         <View style={styles.container}>
         <Text>Liste von Kontakten</Text>
-        <Button title="Gehe zu Kontakt" onPress={()=> navigation.navigate('Friend')}/>
+        <Button title="Gehe zurück" onPress={()=> alert('OK!')}/>
         </View>
     );
 }
