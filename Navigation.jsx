@@ -24,6 +24,8 @@ export default function Navigation() {
                             <Icon.Ionicons name={icon} size={size} color={color}/>
                         );
                     },
+                    tabBarActiveTintColor: 'orange',
+                    tabBarStyle: {backgroundColor: 'aliceblue'}, 
                 };
             }}
         >
