@@ -10,18 +10,16 @@ import FriendScreen from './screens/FriendScreen';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-export default function HomeStack() {
+function HomeStack() {
     return (
-        <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen name="Home" component={HomeScreen}/>
+                <Stack.Screen name="HomeScreen" component={HomeScreen}/>
                 <Stack.Screen name="Friend" component={FriendScreen}/>
             </Stack.Navigator>
-        </NavigationContainer>
     )
 }
 
-function Navigation() {
+export default function Navigation() {
     return (
         <NavigationContainer>
         <Tab.Navigator 
@@ -45,7 +43,7 @@ function Navigation() {
         >
             <Tab.Screen 
                 name="Home" 
-                component={HomeScreen} 
+                component={HomeStack} 
                 options={{ 
                     title: 'Freunde', 
                 }}
