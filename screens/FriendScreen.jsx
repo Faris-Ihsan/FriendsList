@@ -1,10 +1,10 @@
 import { Button, StyleSheet, Text, View } from 'react-native';
 
-export default function FriendScreen() {
+export default function FriendScreen({navigation}) {
     return(
         <View style={styles.container}>
         <Text>Liste von Kontakten</Text>
-        <Button title="Gehe zurück" onPress={()=> alert('OK!')}/>
+        <Button title="Gehe zurück" onPress={()=> navigation.goBack()}/>
         </View>
     );
 }
