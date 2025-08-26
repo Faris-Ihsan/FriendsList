@@ -6,11 +6,12 @@ export default function SettingsScreen() {
         <SectionList
             sections={[
                 // Abschnitt1 (Section1)
-                {title: 'Abscnitt1', data: [{name: 'Alice'},{name: 'Bob'}]},
+                { title: 'Version', data: [{name: '1.0'}] },
                 // Abschnitt1 (Section2)
-                {title: 'Abscnitt2', data: [{name: 'Asep'},{name: 'Ujang'}]},
+                { title: 'Impressum', data: [{name: 'beeworx'},{name: '(c) 2025'}] },
             ]}
-            renderItem={({item}) => <Text>{item.name}</Text>}
+            renderItem={({ item }) => <Text>{item.name}</Text>}
+            renderSectionHeader={({ section }) => <Text style={styles.section}>{section.title}</Text>}
         />
         </View>
     );
@@ -23,5 +24,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         paddingTop: 50,
+    },
+    section:{
+        backgroundColor: 'whitesmoke',
+        borderWidth: StyleSheet.hairlineWidth,
+        borderColor: 'lightgrey',
+        fontSize: 18,
+        padding: 5,
     },
 });
