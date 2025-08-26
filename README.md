@@ -4,13 +4,14 @@ Ein Project über die Verwendung der Navigation in React Native
 
 # FlexBox
 
-Ein Project über die Verwendung des Flex Box in React Native
+Ein Project über die Verwendung des Navigationstrukturen und Flat List in React Native
 
 ## Inhaltsverzeichnis
 
 - [Erstellung neues Projekts](#erstellung-neues-projekts)
 - [Metro Bundler](#metro-bundler)
-- [Infomaterialien](#infomaterialien)
+- [Navigationstrukturen Infomaterialien](#navigationstrukturen-infomaterialien)
+- [FlatList Infomaterialien](#flatlist-infomaterialien)
 
 ## Erstellung neues Projekts
 
@@ -24,7 +25,7 @@ npx create-expo-app FlexBox --template blank
 npx expo start
 ```
 
-## Infomaterialien
+## Navigationstrukturen Infomaterialien
 
 - React Navigation: [reactnavigation.org](reactnavigation.org)
 - Doku zu Tab-Navigation: [reactnavigation.org/docs/tab-based-navigation/](reactnavigation.org/docs/tab-based-navigation/)
@@ -32,3 +33,5 @@ npx expo start
 - API-Docs zu createNativeStackNavigator: [reactnavigation.org/docs/native-stack-navigator](reactnavigation.org/docs/native-stack-navigator)
 - Dokumentation zu Icons in Expo:[ docs.expo.dev/guides/icons](docs.expo.dev/guides/icons)
 - Verzeichnis der Icons in Expo: [icons.expo.fyi](icons.expo.fyi)
+
+## FlatList Infomaterialien
