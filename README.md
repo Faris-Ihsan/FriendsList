@@ -35,3 +35,5 @@ npx expo start
 - Verzeichnis der Icons in Expo: [icons.expo.fyi](icons.expo.fyi)
 
 ## FlatList Infomaterialien
+- Dokumentation von FlatList: [reactnative.dev/docs/flatlist](reactnative.dev/docs/flatlist)
+- Dokumentation von SectionList: [reactnative.dev/docs/sectionlist](reactnative.dev/docs/sectionlist)
