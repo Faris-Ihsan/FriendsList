@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, ScrollView } from 'react-native';
+import { Dimensions, Image, StyleSheet, Text, ScrollView } from 'react-native';
 
 export default function FriendScreen({navigation, route}) {
     const { name } = route.params
@@ -9,6 +9,8 @@ export default function FriendScreen({navigation, route}) {
         </ScrollView>
     );
 }
+
+const width = Dimensions.get('window').width * 0.8;
 
 const styles = StyleSheet.create({
     container: {
@@ -21,7 +23,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffff',
     },
     image: {
-        width: 250,
-        height: 250,
+        width: width,
+        height: width,
     },
 });
