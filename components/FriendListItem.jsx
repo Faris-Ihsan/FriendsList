@@ -1,9 +1,21 @@
-import { Pressable, Text } from "react-native";
+import { Image, Pressable, StyleSheet, Text } from "react-native";
 
 export default function FriendListItem({friend, onPress}) {
     return (
-        <Pressable style={{ height: 50 }} onPress={onPress}>
+        <Pressable style={styles.container} onPress={onPress}>
+            <Image style={styles.image} source={require('../assets/icon.png')}></Image>
             <Text>{friend.name}</Text>
         </Pressable>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flexDirection: 'row',
+        height: 50,
+    },
+    image: {
+        width: 30, 
+        height: 30,
+    },
+})
