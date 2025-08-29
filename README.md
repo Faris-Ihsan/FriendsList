@@ -37,3 +37,11 @@ npx expo start
 ## FlatList Infomaterialien
 - Dokumentation von FlatList: [reactnative.dev/docs/flatlist](reactnative.dev/docs/flatlist)
 - Dokumentation von SectionList: [reactnative.dev/docs/sectionlist](reactnative.dev/docs/sectionlist)
+
+## Pressable, Image, ScrollView
+- Dokumentation zu Pressable: [reactnative.dev/docs/pressable](reactnative.dev/docs/pressable)
+- Allgemeines zur Image-Komponente: [reactnative.dev/docs/images](reactnative.dev/docs/images)
+- Dokumentation zur Image-Komponente: [reactnative.dev/docs/image](reactnative.dev/docs/image)
+- Dokumentation zu ScrollView: [reactnative.dev/docs/scrollview](reactnative.dev/docs/scrollview)
+- Dokumentation zur Dimensions-API: [reactnative.dev/docs/dimensions](reactnative.dev/docs/dimensions)
+- Dokumentation zum Hook useWindowDimensions: [reactnative.dev/docs/usewindowdimensions](reactnative.dev/docs/usewindowdimensions)
