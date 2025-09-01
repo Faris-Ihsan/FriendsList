@@ -2,13 +2,6 @@ import { useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList, StyleSheet, Text, View } from 'react-native';
 import FriendListItem from '../components/FriendListItem';
 
-const dummyData = [
-        { first: 'Alice', last: 'Schmichael', email: 'test1@example.com'}, 
-        { first: 'Bob', last: 'Schmichael', email: 'test2@example.com'}, 
-        { first: 'Asep', last: 'Schmichael', email: 'test3@example.com'}, 
-        { first: 'Udin', last: 'Schmichael', email: 'test4@example.com'},
-    ]
-
 export default function HomeScreen({navigation}) {
     const [data, setData] = useState([]);
     const [isloading, setLoading] = useState(true);
@@ -18,9 +11,10 @@ export default function HomeScreen({navigation}) {
         console.log("Use Effect")
         // Daten laden
         async function fetchData() {
-            // Simulation: langsames Laden/Internetverbindung
-            await new Promise((_) => setTimeout(_, 3000));
-            setData(dummyData);
+            const response = await fetch('https://randomuser.me/api?results=20');
+            const json = await response.json();
+            console.log(json);
+            setData(json.results);
             setLoading(false);
         }
         fetchData();
