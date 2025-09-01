@@ -6,7 +6,7 @@ export default function FriendScreen({navigation, route}) {
     const { friend } = route.params;
     return(
         <ScrollView contentContainerStyle={styles.container} style={styles.ScrollView}>
-            <Image style={{ width: imageWidth, height: imageWidth }} source={require('../assets/icon.png')}></Image>
+            <Image style={{ width: imageWidth, height: imageWidth }} source={{uri: friend.picture.large}}></Image>
             <Text>{friend.name.first} {friend.name.last}</Text>
         </ScrollView>
     );
