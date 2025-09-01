@@ -1,10 +1,7 @@
-import { useState } from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { useEffect, useState } from 'react';
+import { ActivityIndicator, FlatList, StyleSheet, Text, View } from 'react-native';
 import FriendListItem from '../components/FriendListItem';
 
-// keine Daten
-// warten --> langsame Internetverbindung
-// Ladeprobleme
 const dummyData = [
         { first: 'Alice', last: 'Schmichael', email: 'test1@example.com'}, 
         { first: 'Bob', last: 'Schmichael', email: 'test2@example.com'}, 
@@ -14,6 +11,24 @@ const dummyData = [
 
 export default function HomeScreen({navigation}) {
     const [data, setData] = useState([]);
+    const [isloading, setLoading] = useState(true);
+
+
+    useEffect(()=>{
+        console.log("Use Effect")
+        // Daten laden
+        async function fetchData() {
+            // Simulation: langsames Laden/Internetverbindung
+            await new Promise((_) => setTimeout(_, 3000));
+            setData(dummyData);
+            setLoading(false);
+        }
+        fetchData();
+    }, []);
+
+    if (isloading) {
+        return (<View style={styles.center}><ActivityIndicator size="large" color="darkorange"/></View>);
+    }
 
     return(
         <View style={styles.container}>
@@ -33,6 +48,11 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         paddingTop: 50,
+    },
+    center:{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     listSeparator:{
         height: StyleSheet.hairlineWidth, 
