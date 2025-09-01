@@ -6,21 +6,20 @@ export default function HomeScreen({navigation}) {
     const [data, setData] = useState([]);
     const [isloading, setLoading] = useState(true);
 
+    async function fetchData() {
+        setLoading(true);
+        try {
+            const response = await fetch('https://randomuser.me/api?results=20');
+            const json = await response.json();
+            setData(json.results);
+            setLoading(false);
+        } catch (error) {
+            alert('Fehler Beim Laden');
+            setLoading(false)
+        }
+    }
 
     useEffect(()=>{
-        console.log("Use Effect")
-        // Daten laden
-        async function fetchData() {
-            try {
-                const response = await fetch('https://randhjgomuser.me/api?results=20');
-                const json = await response.json();
-                setData(json.results);
-                setLoading(false);
-            } catch (error) {
-                alert('Fehler Beim Laden');
-                setLoading(false)
-            }
-        }
         fetchData();
     }, []);
 
@@ -34,6 +33,8 @@ export default function HomeScreen({navigation}) {
                 <FriendListItem friend={item} onPress={()=> navigation.navigate('Friend', { friend: item })}/>
             )}
             keyExtractor={(item) => item.email}
+            refreshing={isloading}
+            onRefresh={fetchData}
             ItemSeparatorComponent={<View style={styles.listSeparator}/>}
             ListEmptyComponent={<Text style={styles.listEmpty}>Keine Daten geladen</Text>}
         />
