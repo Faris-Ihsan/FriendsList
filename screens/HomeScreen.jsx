@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FlatList, StyleSheet, View } from 'react-native';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
 import FriendListItem from '../components/FriendListItem';
 
 // keine Daten
@@ -13,7 +13,7 @@ const dummyData = [
     ]
 
 export default function HomeScreen({navigation}) {
-    const [data, setData] = useState(dummyData);
+    const [data, setData] = useState([]);
 
     return(
         <View style={styles.container}>
@@ -22,6 +22,7 @@ export default function HomeScreen({navigation}) {
             )}
             keyExtractor={(item) => item.email}
             ItemSeparatorComponent={<View style={styles.listSeparator}/>}
+            ListEmptyComponent={<Text style={styles.listEmpty}>Keine Daten geladen</Text>}
         />
         </View>
     );
@@ -36,5 +37,10 @@ const styles = StyleSheet.create({
     listSeparator:{
         height: StyleSheet.hairlineWidth, 
         backgroundColor: 'lightgray',
+    },
+    listEmpty: {
+        fontSize: 32,
+        paddingTop: 100, 
+        textAlign: 'center',
     },
 });
